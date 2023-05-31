@@ -19,7 +19,7 @@ function App() {
      })
      setTimeout(() => {
       setAlert(null);
-     }, 1400);
+     }, 1200);
   }
   const [mode,setMode] = useState('light');// dark mode enable or not
   const [text,updateText]=useState("Enable Dark Mode");
