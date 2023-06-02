@@ -51,16 +51,16 @@ export default function TextForm(props) {
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'? '#e8d2f0':'white', color: props.mode==='dark'?'#4a2443':'black' }} id="exampleFormControlTextarea1" rows="8"></textarea> 
          {/*double curly braces means ki ham js ke andr object bana rahe hai  */}
         </div>
-        <button className="btn btn-success mx-2" onClick={handleUpClick} >Convert to Upper Case</button>
-        <button className="btn btn-success mx-2" onClick={handleLoClick} >Convert to Lower Case</button>
-        <button className="btn btn-success mx-2" onClick={handleSentence} >Sentence Case</button>
-        <button className="btn btn-success mx-2" onClick={handleWords} >Title Case</button>
-        <button className="btn btn-warning mx-2" onClick={handleClear} >Clear All</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleUpClick} >Convert to Upper Case</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleLoClick} >Convert to Lower Case</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleSentence} >Sentence Case</button>
+        <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleWords} >Title Case</button>
+        <button disabled={text.length===0} className="btn btn-warning mx-2 my-2" onClick={handleClear} >Clear All</button>
 
     </div>
     <div className="container my-4" style={{color: props.mode==='dark'?'white':'black'}} >
       <h2>Your Text summary</h2>
-       <p>{text.split(" ").length-1} words and {text.length} characters</p>
+       <p>{text.split(" ").filter((Element)=>{return Element.length!==0}).length} words and {text.length} characters</p>
        <h3>Preview</h3>
        <p>{text.length>0?text:'Enter something in the textbox above to preview it here.'}</p>
     </div>

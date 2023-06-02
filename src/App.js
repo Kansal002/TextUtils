@@ -45,7 +45,7 @@ function App() {
       <Alert alert = {alert}/>  
       <div className="container my-3">
         <Routes>   
-           <Route path="/about" element={<Accordion/>} /> 
+           <Route path="/about" element={<Accordion mode={mode}/>} /> 
           <Route path="/" element={<TextForm heading = "Enter the text to analyze below" mode={mode} showAlert={showAlert} />} /> 
         </Routes>
       </div>
